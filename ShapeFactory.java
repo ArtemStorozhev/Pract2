@@ -12,6 +12,10 @@ import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
+/**
+ *
+ * @author Сторожевы
+ */
 public class ShapeFactory {
     public Shape shape;
     public BasicStroke stroke = new BasicStroke(3.0f);
@@ -19,6 +23,10 @@ public class ShapeFactory {
     public int width = 25;
     public int height = 25;
 
+    /**
+     *tip figuri
+     * @param shape_type
+     */
     public ShapeFactory(int shape_type) {
         switch (shape_type / 10) {
             case 1: {
@@ -51,6 +59,10 @@ public class ShapeFactory {
                 throw new Error("type is nusupported");
             }
         }
+        /**
+         * cvet, gradient, tolshina figur
+         */
+      
         switch (shape_type % 10) {
             case 1: {
                 this.stroke = new BasicStroke(3.0f);

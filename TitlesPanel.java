@@ -16,6 +16,10 @@ import java.awt.geom.AffineTransform;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+/**
+ *
+ * @author Storozhev
+ */
 public class TitlesPanel
 extends JPanel
 implements ActionListener {
@@ -25,6 +29,10 @@ implements ActionListener {
     private int start_angle = 0;
     private int shape;
 
+    /**
+     *
+     * @param _shape
+     */
     public TitlesPanel(int _shape) {
         this.shape = _shape;
         this.animation = new Timer(50, this);
@@ -32,13 +40,20 @@ implements ActionListener {
         this.animation.start();
     }
 
+    /**
+     *
+     * @param arg0
+     */
     @Override
     public void actionPerformed(ActionEvent arg0) {
         if (this.is_done) {
             this.repaint();
         }
     }
-
+/**
+ * 
+ * @param g 
+ */
     private void doDrawing(Graphics g) {
         this.is_done = false;
         this.g2d = (Graphics2D)g;
@@ -54,6 +69,9 @@ implements ActionListener {
         if (this.start_angle > 360) {
             this.start_angle = 0;
         }
+        /**
+         * vrashenie vigur, kolichestvo
+         */
         double dr = 90.0 / ((double)w / ((double)shape.width * 1.5));
         int j = shape.height;
         while (j < h) {
@@ -71,6 +89,10 @@ implements ActionListener {
         this.is_done = true;
     }
 
+    /**
+     *
+     * @param g
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
